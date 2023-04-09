@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectMemberTask", "ProjectMemberTask\ProjectMemberTask.csproj", "{765C22D7-2EA8-4208-8F64-2DFB17C712EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectMemberApi", "ProjectMemberTask\ProjectMemberApi.csproj", "{765C22D7-2EA8-4208-8F64-2DFB17C712EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "..\DAL\DAL.csproj", "{5CE763F2-57C9-45A8-96CB-A2CDED1084E1}"
 EndProject
