@@ -1,4 +1,5 @@
-﻿using BLL.Services;
+﻿using BLL.DTOs;
+using BLL.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,39 +43,62 @@ namespace ProjectMemberTask.Controllers
         }
 
 
-
-
-
-
-
-
-
-
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        [HttpPost]
+        [Route("api/member")]
+        public HttpResponseMessage AddMember([FromBody] MemberDTO member)
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                var data = MemberService.AddMember(member);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+        [HttpPatch]
+        [Route("api/member")]
+        public HttpResponseMessage UpdateMember([FromBody] MemberDTO member)
         {
-            return "value";
+            try
+            {
+                var data = MemberService.UpdateMember(member);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
         }
 
-        // POST api/<controller>
-        public void Post([FromBody] string value)
+        [HttpDelete]
+        [Route("api/member/{id}")]
+        public HttpResponseMessage DeleteMember(int id)
         {
+            try
+            {
+                var data = MemberService.DeleteMember(id);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
         }
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody] string value)
-        {
-        }
 
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-        }
+
+
+
+
+
+
+
+
+
+
+
     }
 }

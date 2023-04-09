@@ -17,6 +17,54 @@ namespace BLL.Services
         }
 
 
+        public static ProjectDTO GetProjectById(int id)
+        {
+            var data = ProjectRepo.GetProjectById(id);
+            return ProjectConverter(data);
+        }
+        public static bool AddProject(ProjectDTO project)
+        {
+            var data = ProjectConverter(project);
+            return ProjectRepo.AddProject(data);
+        }
+
+        public static bool UpdateProject(ProjectDTO project)
+        {
+            var data = ProjectConverter(project);
+            return ProjectRepo.UpdateProject(data);
+        }
+
+        public static bool DeleteProject(int id)
+        {
+            return ProjectRepo.DeleteProject(id);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //For converter
+
         private static List<ProjectDTO> ProjectConverter(IEnumerable<DAL.Models.Project> data)
         {
             return data.Select(ProjectConverter).ToList();

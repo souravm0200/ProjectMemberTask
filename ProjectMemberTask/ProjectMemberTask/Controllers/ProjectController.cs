@@ -1,4 +1,5 @@
-﻿using BLL.Services;
+﻿using BLL.DTOs;
+using BLL.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace ProjectMemberTask.Controllers
+namespace ProjectProjectTask.Controllers
 {
     public class ProjectController : ApiController
     {
@@ -26,37 +27,70 @@ namespace ProjectMemberTask.Controllers
         }
 
 
-
-
-
-
-
-
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        [HttpGet]
+        [Route("api/project/{id}")]
+        public HttpResponseMessage GetProjectById(int id)
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                var data = ProjectService.GetProjectById(id);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+
+        [HttpPost]
+        [Route("api/project")]
+        public HttpResponseMessage AddProject([FromBody] ProjectDTO project)
         {
-            return "value";
+            try
+            {
+                var data = ProjectService.AddProject(project);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
         }
 
-        // POST api/<controller>
-        public void Post([FromBody] string value)
+        [HttpPatch]
+        [Route("api/project")]
+        public HttpResponseMessage UpdateProject([FromBody] ProjectDTO project)
         {
+            try
+            {
+                var data = ProjectService.UpdateProject(project);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
         }
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody] string value)
+        [HttpDelete]
+        [Route("api/project/{id}")]
+        public HttpResponseMessage DeleteProject(int id)
         {
+            try
+            {
+                var data = ProjectService.DeleteProject(id);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
         }
 
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-        }
+
+
+
+
     }
 }
