@@ -26,6 +26,22 @@ namespace ProjectMemberTask.Controllers
         }
 
 
+        [HttpGet]
+        [Route("api/member/{id}")]
+        public HttpResponseMessage GetMemberById(int id)
+        {
+            try
+            {
+                var data = MemberService.GetMemberById(id);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
+
+
 
 
 

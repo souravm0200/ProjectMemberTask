@@ -19,6 +19,37 @@ namespace BLL.Services
         }
 
 
+        public static MemberDTO GetMemberById(int id)
+        {
+            var data = MemberRepo.GetMemberById(id);
+            return MemberConverter(data);
+        }
+        public static bool AddMember(MemberDTO member)
+        {
+            var data = MemberConverter(member);
+            return MemberRepo.AddMember(data);
+        }
+
+        public static bool UpdateMember(MemberDTO member)
+        {
+            var data = MemberConverter(member);
+            return MemberRepo.UpdateMember(data);
+        }
+
+        public static bool DeleteMember(int id)
+        {
+            return MemberRepo.DeleteMember(id);
+        }
+
+
+
+
+
+
+
+
+
+        //For Converter
         private static List<MemberDTO> MemberConverter(IEnumerable<DAL.Models.Member> data)
         {
             return data.Select(MemberConverter).ToList();
