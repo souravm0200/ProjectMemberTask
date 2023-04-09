@@ -1,0 +1,14 @@
+E:\Repositories\ProjectMemberTask\DAL\bin\Debug\DAL.dll.config
+E:\Repositories\ProjectMemberTask\DAL\bin\Debug\DAL.dll
+E:\Repositories\ProjectMemberTask\DAL\bin\Debug\DAL.pdb
+E:\Repositories\ProjectMemberTask\DAL\bin\Debug\EntityFramework.dll
+E:\Repositories\ProjectMemberTask\DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Repositories\ProjectMemberTask\DAL\bin\Debug\EntityFramework.xml
+E:\Repositories\ProjectMemberTask\DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Repositories\ProjectMemberTask\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+E:\Repositories\ProjectMemberTask\DAL\obj\Debug\DAL.Migrations.DBCreated.resources
+E:\Repositories\ProjectMemberTask\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
+E:\Repositories\ProjectMemberTask\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+E:\Repositories\ProjectMemberTask\DAL\obj\Debug\DAL.csproj.CopyComplete
+E:\Repositories\ProjectMemberTask\DAL\obj\Debug\DAL.dll
+E:\Repositories\ProjectMemberTask\DAL\obj\Debug\DAL.pdb
